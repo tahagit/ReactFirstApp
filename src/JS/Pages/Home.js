@@ -71,7 +71,7 @@ class Home extends Component {
 
                     if (pval.id === ldval) {
 
-                        this.state.displayedContacts[pind].priceUsd = Object.values(result)[ldind];
+                        // this.state.displayedContacts[pind].priceUsd = Object.values(result)[ldind];
                         this.setState(this.state);
 
                     }
