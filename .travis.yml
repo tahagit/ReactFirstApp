@@ -1,17 +1,13 @@
 language: node_js
 node_js:
-- "6"
+- stable
 cache:
   directories:
   - node_modules
-before_install:
-  - npm config set spin false
-addons:
-    chrome: stable
 script:
-- npm run lint:js
 - npm install
 - npm run build
+- npm run deploy
 true:
   branch: master
 deploy:
