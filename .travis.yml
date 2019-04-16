@@ -1,11 +1,17 @@
 language: node_js
 node_js:
-- "stable"
+- stable
 cache:
   directories:
   - node_modules
 script:
 - npm install
 - npm run build
-on:
+true:
   branch: master
+
+deploy:
+  provider: heroku
+  app: tahaappname
+  api_key:
+  secure: "E3y+A606dVYk6QIOpkJF3tUZaPxXYUn9/vBesRYo+YEfKK9ciWwJyLxqxhIMB9SWC6YBfUW0Aez7Jy1jGHGaFt64diI/v+tjQCCpcciyJcE1hwuQtYRU6Z17ym1NRUZUzD4CrhjPLx22meekG1+J7R+30oe0yY7Sd+dU7Glo3ThpM/ZczLoFLXmJmhbCvtxV3AE3CGsyznXtWcUli1FehngkOOZh3LTAhU8Rj2G+XtMOLHZfls0VAqLs4a98LJY2s5Heae/ikJjhYhYFFHzlGcjSIZcvIEoc1UlvZjZHQj1AOYSWU/9YIrCX9r2lAHkUP+kJM6tVAJvuSHuYiP/MTCv3LMi0Z3dJ3Go3aAZDv9Q1uj1PzEMG3I0vUpppW+XHcktC8VanzHuSdpxZeg2DHDCFqDH0wAc2KEm4GAS1XNjzESPOujoX5Ax85YjVgNHAWSKJYeFh6h6A9CYonzRJqqx4yNJ71A/XrAVRfXGboDPNzSjA82zCEiw1Th7fzAAVoBxa2rOlIhVmLTVsu3V4gUvKEkhUJe0gi0b6p+W8NghsSeGWzh+FIng6SsK8f+Or84m0tSBMjQzxG398ghflBtnSMx4UAn02f6eQlcgs094BeGra2dSAIsaYrA8iW7bz/nLbuj+JExG6u7h+D3nk2use5NGGyPqTAVGz7Qm2Vuo="
