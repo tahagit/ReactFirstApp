@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://myname.github.io/myapp",
+  "homepage": "https://taha4954.herokuapp.com/",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "bootstrap": "^4.3.1",
