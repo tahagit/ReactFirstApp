@@ -14,7 +14,7 @@ class Apps extends Component {
             <div  className="App">
 
 
-                <div  className="one" className="Land">
+                <div className="Land">
                     <img src={require("../../Assets/mock.png")} alt="m" className="mock"/>
 
                     {/*<div>*/}
