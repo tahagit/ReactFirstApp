@@ -10,6 +10,7 @@ script:
 true:
   branch: master
 deploy:
+  skip_cleanup: true
   provider: heroku
   app: taha4954
   api_key:
