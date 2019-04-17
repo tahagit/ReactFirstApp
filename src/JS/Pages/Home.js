@@ -63,16 +63,21 @@ class Home extends Component {
 
     messageFromSocket(data) {
         let result = JSON.parse(data);
+        let oldPrices=this.state.Prices;
 
 
         Object.keys(result).map((ldval, ldind) =>
 
-                this.state.displayedContacts.forEach((pval, pind) => {
+            oldPrices.forEach((pval, pind) => {
 
                     if (pval.id === ldval) {
 
-                        // this.state.displayedContacts[pind].priceUsd = Object.values(result)[ldind];
-                        this.setState(this.state);
+                        oldPrices[pind].priceUsd = Object.values(result)[ldind];
+                        // this.setState(this.state);
+
+                        this.setState( {
+                            displayedContacts:oldPrices
+                        })
 
                     }
 
