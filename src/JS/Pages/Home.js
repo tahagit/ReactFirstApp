@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import '../../CSS/App.css';
 import Websocket from 'react-websocket';
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
 
 let Datee = new Date();
 let listItems;
@@ -8,13 +10,14 @@ let listItems;
 
 class Home extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
 
             Prices: [],
             textForSearch: '',
-            displayedContacts: []
+            displayedContacts: [],
+            showMore: false
 
         }
     }
@@ -63,27 +66,26 @@ class Home extends Component {
 
     messageFromSocket(data) {
         let result = JSON.parse(data);
-        let oldPrices=this.state.Prices;
+        let oldPrices = this.state.displayedContacts;
 
 
         Object.keys(result).map((ldval, ldind) =>
 
             oldPrices.forEach((pval, pind) => {
 
-                    if (pval.id === ldval) {
+                if (pval.id === ldval) {
 
-                        oldPrices[pind].priceUsd = Object.values(result)[ldind];
-                        // this.setState(this.state);
+                    oldPrices[pind].priceUsd = Object.values(result)[ldind];
+                    // this.setState(this.state);
 
-                        this.setState( {
-                            displayedContacts:oldPrices
-                        })
+                    this.setState({
+                        displayedContacts: oldPrices
+                    })
 
-                    }
+                }
 
 
-                })
-
+            })
         )
 
     }
@@ -150,21 +152,46 @@ class Home extends Component {
             );
 
         return (
-            <div className="App">
+            <div>
 
                 <div className="VAZIRIIIIIIII">
                     {Date}
                     {Search}
-                    {listItems}
+
+                    <div style={{
+                        overflow: "hidden",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: this.state.showMore ? null : 330
+                    }}>
+                        {listItems}
+                    </div>
+
+                    <Button onClick={this.showMore.bind(this)}
+                            primary>{this.state.showMore ? "Show Less" : "Show More"}</Button>
+
+
                 </div>
+
                 <Websocket url='wss://ws.coincap.io/prices?assets=ALL'
                            onMessage={this.messageFromSocket.bind(this)}/>
-
 
 
             </div>
         );
     }
+
+    showMore() {
+        if (this.state.showMore)
+            this.setState({
+                showMore: false
+            });
+        else
+            this.setState({
+                showMore: true
+            });
+    }
+
 }
 
 export default Home;

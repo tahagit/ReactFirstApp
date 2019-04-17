@@ -8,6 +8,7 @@ import './CSS/App.css';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Charts from './JS/Pages/Charts'
 import Apps from './JS/Pages/Apps'
+
 export default class App extends Component {
 
 
@@ -17,7 +18,10 @@ export default class App extends Component {
         return (
             <Router>
 
-                <div className="App">
+                <div style={{textAlign:"center",
+                    width:"100%",
+                    alignItems:"center",
+                    justifyContent:"center"}}>
 
                     <div className="Header">
 
@@ -52,7 +56,11 @@ export default class App extends Component {
 
         );
     }
+
+
+
 }
+
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));

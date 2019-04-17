@@ -9,10 +9,10 @@ import 'react-dropdown/style.css';
 let Datee = new Date();
 let prData = [[0, 123], [1, 22]];
 
-class Home extends Component {
+class Charts extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             Prices: [],
             textForSearch: '',
@@ -135,5 +135,5 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Charts;
 
