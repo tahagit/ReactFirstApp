@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import logo from "../../Assets/logo.svg";
 import as from "../../Assets/as.svg";
-import google from "../../Assets/google-play-badge.svg";
+import google from "../../Assets/gpb.svg";
 
 let Datee = new Date();
 let listItems;

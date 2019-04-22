@@ -7,7 +7,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import logo from "../../Assets/logo.svg";
 import as from "../../Assets/as.svg";
-import google from "../../Assets/google-play-badge.svg";
+import google from "../../Assets/gpb.svg";
 
 let Datee = new Date();
 let prData = [[0, 123], [1, 22]];

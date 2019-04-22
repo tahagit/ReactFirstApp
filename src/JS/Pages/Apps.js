@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../../CSS/App.css';
 import 'react-dropdown/style.css';
 import as from '../../Assets/as.svg'
-import google from "../../Assets/google-play-badge.svg";
+import google from "../../Assets/gpb.svg";
 
 
 class Apps extends Component {
