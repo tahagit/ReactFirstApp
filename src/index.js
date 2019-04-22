@@ -8,8 +8,7 @@ import './CSS/App.css';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Charts from './JS/Pages/Charts'
 import Apps from './JS/Pages/Apps'
-import as from "./Assets/as.svg";
-import google from "./Assets/google-play-badge.svg";
+
 
 
 export default function App() {
