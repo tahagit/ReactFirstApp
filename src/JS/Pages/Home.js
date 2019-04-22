@@ -3,6 +3,9 @@ import '../../CSS/App.css';
 import Websocket from 'react-websocket';
 import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
+import logo from "../../Assets/logo.svg";
+import as from "../../Assets/as.svg";
+import google from "../../Assets/google-play-badge.svg";
 
 let Datee = new Date();
 let listItems;
@@ -152,8 +155,8 @@ class Home extends Component {
             );
 
         return (
-            <div>
 
+            <div>
                 <div className="VAZIRIIIIIIII">
                     {Date}
                     {Search}
@@ -167,16 +170,42 @@ class Home extends Component {
                         {listItems}
                     </div>
 
-                    <Button onClick={this.showMore.bind(this)}
+                    <Button style={{margin:20,marginBottom:150}} onClick={this.showMore.bind(this)}
                             primary>{this.state.showMore ? "Show Less" : "Show More"}</Button>
+
+                    <Websocket url='wss://ws.coincap.io/prices?assets=ALL'
+                               onMessage={this.messageFromSocket.bind(this)}/>
 
 
                 </div>
 
-                <Websocket url='wss://ws.coincap.io/prices?assets=ALL'
-                           onMessage={this.messageFromSocket.bind(this)}/>
+
+                <div className="Footer">
+
+                    <div className="headerContainer">
+                        <img src={logo} className="headerLogo" alt="headerLogo"/>
+
+                        <div className="headerButtonsContainer">
 
 
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://itunes.apple.com/us/app/coinix-cryptocurrency-price/id1456126185?ls=1&mt=8">
+                                <img style={{width: 220, height: 80, margin: 10}} src={as} alt="m"/>
+                            </a>
+                            {/*<a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=io.coinix.coinix">*/}
+                            {/*<img style={{width:240,height:80,margin:10}} src={require("./Assets/gp.png")} alt="m" />*/}
+                            {/*</a>*/}
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://play.google.com/store/apps/details?id=io.coinix.coinix">
+                                <img style={{width: 220, height: 80, margin: 10}} src={google} alt="m"/>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
             </div>
         );
     }

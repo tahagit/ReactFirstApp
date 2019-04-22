@@ -8,59 +8,66 @@ import './CSS/App.css';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Charts from './JS/Pages/Charts'
 import Apps from './JS/Pages/Apps'
-
-export default class App extends Component {
-
-
-    render() {
+import as from "./Assets/as.svg";
+import google from "./Assets/google-play-badge.svg";
 
 
-        return (
-            <Router>
+export default function App() {
 
-                <div style={{textAlign:"center",
-                    width:"100%",
-                    alignItems:"center",
-                    justifyContent:"center"}}>
+    document.body.style.backgroundColor = "#f3f3f3";
 
-                    <div className="Header">
+    return (
 
-                        <div className="headerContainer">
-                            <img src={logo} className="headerLogo" alt="headerLogo"/>
-
-                            <div className="headerButtonsContainer">
-
-                                <Link to="/home" className="menuTexts">Home</Link>
-                                <Link to="/disclaimer" className="menuTexts">Disclaimer</Link>
-                                <Link to="/charts" className="menuTexts">Charts</Link>
-                                <Link to="/apps" className="menuTexts">Mobile Apps</Link>
-                                <Link to="/policies" className="menuTexts">Policy</Link>
+        <Router>
 
 
-                            </div>
+            <div style={{
+                textAlign: "center",
+                width: "100%",
+                alignItems: "center",
+                justifyContent: "center"
+            }}>
+
+                <div className="Header">
+
+                    <div className="headerContainer">
+                        <img src={logo} className="headerLogo" alt="headerLogo"/>
+
+                        <div className="headerButtonsContainer">
+
+                            <Link to="/home" className="menuTexts">Home</Link>
+                            <Link to="/disclaimer" className="menuTexts">Disclaimer</Link>
+                            <Link to="/charts" className="menuTexts">Charts</Link>
+                            <Link to="/apps" className="menuTexts">Mobile Apps</Link>
+                            <Link to="/policies" className="menuTexts">Policy</Link>
+
 
                         </div>
 
-
                     </div>
 
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/home" component={Home}/>
-                    <Route path="/policies" component={Home}/>
-                    <Route path="/disclaimer" component={Home}/>
-                    <Route path="/charts/" component={Charts}/>
-                    <Route path="/apps" component={Apps}/>
 
                 </div>
-            </Router>
 
-        );
-    }
+                <Route path="/" exact component={Home}/>
+                <Route path="/home" component={Home}/>
+                <Route path="/policies" component={Home}/>
+                <Route path="/disclaimer" component={Home}/>
+                <Route path="/charts/" component={Charts}/>
+                <Route path="/apps" component={Apps}/>
 
+
+
+
+
+            </div>
+
+        </Router>
+
+    );
 
 
 }
-
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));

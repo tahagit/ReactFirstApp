@@ -5,6 +5,9 @@ import {Chart} from "react-charts";
 
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import logo from "../../Assets/logo.svg";
+import as from "../../Assets/as.svg";
+import google from "../../Assets/google-play-badge.svg";
 
 let Datee = new Date();
 let prData = [[0, 123], [1, 22]];
@@ -18,8 +21,7 @@ class Charts extends Component {
             textForSearch: '',
             fwf:'',
             anchorEl: null,
-
-
+            selectedChart:'Choose Currency',
             ind: 0
         }
     }
@@ -60,6 +62,9 @@ class Charts extends Component {
     async clickl(event) {
 
         // console.log(event.value);
+        this.setState({
+            selectedChart:event.value
+        });
 
         try {
             prData = [];
@@ -123,12 +128,41 @@ class Charts extends Component {
 
 
                     <Dropdown options={chooselistItems} onChange={(event) => {this.clickl(event)}}
-                              placeholder="Choose Currency"/>
+                              placeholder={this.state.selectedChart}/>
 
                     {this.state.fwf}
 
                 </div>
 
+
+
+
+                <div className="Footer">
+
+                    <div className="headerContainer">
+                        <img src={logo} className="headerLogo" alt="headerLogo"/>
+
+                        <div className="headerButtonsContainer">
+
+
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://itunes.apple.com/us/app/coinix-cryptocurrency-price/id1456126185?ls=1&mt=8">
+                                <img style={{width: 220, height: 80, margin: 10}} src={as} alt="m"/>
+                            </a>
+                            {/*<a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=io.coinix.coinix">*/}
+                            {/*<img style={{width:240,height:80,margin:10}} src={require("./Assets/gp.png")} alt="m" />*/}
+                            {/*</a>*/}
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://play.google.com/store/apps/details?id=io.coinix.coinix">
+                                <img style={{width: 220, height: 80, margin: 10}} src={google} alt="m"/>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
         );

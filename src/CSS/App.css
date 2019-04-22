@@ -53,6 +53,22 @@
     background-color: #273665;
 }
 
+.Footer {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: #273665;
+    position: fixed;
+    bottom: 0;
+
+
+}
+
 .headerLogo {
     height: 50%;
 
@@ -272,8 +288,10 @@ a:hover {
 .VAZIRIIIIIIII {
     max-width: 980px;
     margin: 0 auto;
+    height: 100%;
 
 }
+
 
 .cardContainer .aliV {
     flex-grow: 1;
